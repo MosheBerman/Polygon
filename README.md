@@ -1,4 +1,4 @@
 Polygon
 =======
 
-An app using Core Graphics and math used to draw polygons.
+A demo app using math and the Core framework Graphics to draw polygons.
