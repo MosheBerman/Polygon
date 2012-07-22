@@ -10,4 +10,14 @@
 
 @interface MBViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *numberOfSidesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rotationLabel;
+@property (weak, nonatomic) IBOutlet UIStepper *stepper;
+@property (weak, nonatomic) IBOutlet UIStepper *rotationStepper;
+
+@property (weak, nonatomic) IBOutlet UIScrollView *shapeScrollView;
+- (IBAction)addShape:(id)sender;
+- (IBAction)adjustSides:(id)sender;
+- (IBAction)adjustRotation:(id)sender;
+
 @end

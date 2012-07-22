@@ -16,6 +16,7 @@
 		46F819D015BC8A9E009AEC41 /* MBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F819CF15BC8A9E009AEC41 /* MBViewController.m */; };
 		46F819D315BC8A9E009AEC41 /* MBViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46F819D115BC8A9E009AEC41 /* MBViewController_iPhone.xib */; };
 		46F819D615BC8A9E009AEC41 /* MBViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46F819D415BC8A9E009AEC41 /* MBViewController_iPad.xib */; };
+		46F819DE15BC8ABB009AEC41 /* MBPolygonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F819DD15BC8ABB009AEC41 /* MBPolygonView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		46F819CF15BC8A9E009AEC41 /* MBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBViewController.m; sourceTree = "<group>"; };
 		46F819D215BC8A9E009AEC41 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MBViewController_iPhone.xib; sourceTree = "<group>"; };
 		46F819D515BC8A9E009AEC41 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MBViewController_iPad.xib; sourceTree = "<group>"; };
+		46F819DC15BC8ABB009AEC41 /* MBPolygonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBPolygonView.h; sourceTree = "<group>"; };
+		46F819DD15BC8ABB009AEC41 /* MBPolygonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBPolygonView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 				46F819D115BC8A9E009AEC41 /* MBViewController_iPhone.xib */,
 				46F819D415BC8A9E009AEC41 /* MBViewController_iPad.xib */,
 				46F819C315BC8A9E009AEC41 /* Supporting Files */,
+				46F819DC15BC8ABB009AEC41 /* MBPolygonView.h */,
+				46F819DD15BC8ABB009AEC41 /* MBPolygonView.m */,
 			);
 			path = Polygon;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 				46F819C915BC8A9E009AEC41 /* main.m in Sources */,
 				46F819CD15BC8A9E009AEC41 /* MBAppDelegate.m in Sources */,
 				46F819D015BC8A9E009AEC41 /* MBViewController.m in Sources */,
+				46F819DE15BC8ABB009AEC41 /* MBPolygonView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +263,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Polygon/Polygon-Prefix.pch";
 				INFOPLIST_FILE = "Polygon/Polygon-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -268,6 +275,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Polygon/Polygon-Prefix.pch";
 				INFOPLIST_FILE = "Polygon/Polygon-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -292,6 +300,7 @@
 				46F819DB15BC8A9E009AEC41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
