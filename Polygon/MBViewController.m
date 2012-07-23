@@ -20,6 +20,7 @@
 const float kScale = 20;
 const float gridSize = 100;
 
+@synthesize arr;
 @synthesize numberOfSidesLabel;
 @synthesize rotationLabel;
 @synthesize stepper;

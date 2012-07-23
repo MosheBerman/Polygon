@@ -10,12 +10,16 @@
 #import "Math.h"
 
 @interface MBPolygonView ()
-@property NSInteger numberOfSides;
+    @property NSInteger numberOfSides;
     @property CGFloat scalingFactor;
     @property CGFloat rotation;
 @end
 
 @implementation MBPolygonView
+
+@synthesize scalingFactor;
+@synthesize rotation = _rotation;
+@synthesize numberOfSides = _numberOfSides;
 
 //
 //  Convenience method to convert between Degrees and Radians
