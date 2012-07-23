@@ -3,4 +3,4 @@ Polygon
 
 A demo app using math and the Core framework Graphics to draw polygons.
 
-![Screenshot of Polygon in action](http://i.imgur.com/5nbmC.png "Polygon in Action")
+![Screenshot of Polygon in action](http://i.imgur.com/ofVPt.png "Polygon in Action")
