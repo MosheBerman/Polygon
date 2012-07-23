@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIStepper *stepper;
 @property (weak, nonatomic) IBOutlet UIStepper *rotationStepper;
 @property (weak, nonatomic) IBOutlet UIImageView *shapeImageView;
+@property (weak, nonatomic) IBOutlet UILabel *noPolygonsLabel;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *shapeScrollView;
 - (IBAction)addShape:(id)sender;

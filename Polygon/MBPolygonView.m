@@ -20,6 +20,7 @@
 @synthesize scalingFactor;
 @synthesize rotation = _rotation;
 @synthesize numberOfSides = _numberOfSides;
+@synthesize isDeleted;
 
 //
 //  Convenience method to convert between Degrees and Radians
@@ -40,6 +41,7 @@ float degToRad(float deg){
         self.numberOfSides = numberOfSides;
         self.scalingFactor = scale;
         self.rotation = rotation;
+        self.isDeleted = NO;
     }
     
     return self;
@@ -50,14 +52,29 @@ float degToRad(float deg){
 - (void)drawRect:(CGRect)rect
 {
     
+    //
+    //  Create a poly image
+    //
+    
     UIImage *i = [self polyImage];
     
     UIImageView *polygonView = [[UIImageView alloc] initWithImage:i];
     
+    //
+    //  Display it
+    //
+    
+    
     [self addSubview:polygonView];
     
+    //
+    //  Set up a long press to remove the poly from the screen
+    //
+    
+    UILongPressGestureRecognizer *removeGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(cleanUp)];
+    removeGesture.minimumPressDuration = 1.0;
+    [self addGestureRecognizer:removeGesture];
 }
-
 
 //
 //  Draw a a polygon into a UIImage and returns the image
@@ -135,4 +152,7 @@ float degToRad(float deg){
     return image;
 }
 
+- (void) cleanUp{
+    self.isDeleted = YES;
+}
 @end

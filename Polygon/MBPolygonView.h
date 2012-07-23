@@ -11,6 +11,12 @@
 @interface MBPolygonView : UIView
 
 //
+//
+//
+
+@property (nonatomic) BOOL isDeleted;
+
+//
 //  Designated Initializer
 //
 
@@ -21,5 +27,7 @@
 //
 
 - (UIImage *)polyImage;
+
+
 
 @end
