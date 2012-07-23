@@ -25,6 +25,7 @@ const float gridSize = 100;
 @synthesize rotationLabel;
 @synthesize stepper;
 @synthesize rotationStepper;
+@synthesize shapeImageView;
 @synthesize shapeScrollView;
 
 - (void)viewDidLoad
@@ -99,5 +100,31 @@ const float gridSize = 100;
     self.rotationLabel.text = [NSString stringWithFormat:@"Polygon is rotated %.0fº", self.rotationStepper.value];
 }
 
+- (IBAction)showRotatingShape:(id)sender {
+    
+    
+    [self.shapeImageView stopAnimating];
+    
+    NSMutableArray *shapes = [[NSMutableArray alloc] init];
+    
+    for (NSInteger i = 0; i<360; i++) {
+        MBPolygonView *p = [[MBPolygonView alloc] initWithFrame:self.shapeImageView.frame numberOfSides:self.stepper.value andRotation:i andScale:kScale];
+        [shapes addObject:[p polyImage]];
+    }
+    
+    [self.shapeImageView setAnimationImages:shapes];
+    [self.shapeImageView setAnimationRepeatCount:0];
+    [self.shapeImageView setAnimationDuration:1];
+    
+    [self.shapeImageView startAnimating];
+    
+    
+    
+}
 
+
+- (void)viewDidUnload {
+    [self setShapeImageView:nil];
+    [super viewDidUnload];
+}
 @end
