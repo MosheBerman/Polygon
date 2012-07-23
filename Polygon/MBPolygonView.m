@@ -49,10 +49,32 @@ float degToRad(float deg){
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
+    
+    UIImage *i = [self polyImage];
+    
+    UIImageView *polygonView = [[UIImageView alloc] initWithImage:i];
+    
+    [self addSubview:polygonView];
+    
+}
+
+
+//
+//  Draw a a polygon into a UIImage and returns the image
+//
+
+- (UIImage *)polyImage
+{
     // Drawing code
+    
+    //Create an image context
+    UIGraphicsBeginImageContext(self.frame.size);
     
     //Get a context
     CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    //Save the state of the context
+    CGContextSaveGState(context);
     
     //Set the stroke to white
     [[UIColor whiteColor] set];
@@ -79,13 +101,14 @@ float degToRad(float deg){
         point.x = sin(angleInRadians);
         point.y = cos(angleInRadians);
         
+        //  Apply the scale factor
         point.x *= self.scalingFactor;
         point.y *= self.scalingFactor;
         
         //  Offset to the center
         point.x += self.frame.size.width/2;
         point.y +=self.frame.size.height/2;
-    
+        
         //  Set the starting point if we're working
         //  the inital point. Core Graphics needs this.
         if (i == 0) {
@@ -99,7 +122,17 @@ float degToRad(float deg){
     //  Render it all out
     CGContextStrokePath(context);
     
-}
+    //Grab an image from the context
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
 
+    //Restore the state
+    CGContextRestoreGState(context);
+    
+    //clean up the context
+    UIGraphicsEndImageContext();
+    
+    //return the image
+    return image;
+}
 
 @end

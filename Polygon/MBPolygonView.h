@@ -10,6 +10,16 @@
 
 @interface MBPolygonView : UIView
 
+//
+//  Designated Initializer
+//
+
 - (id)initWithFrame:(CGRect)frame numberOfSides:(NSInteger)numberOfSides andRotation:(CGFloat)rotation andScale:(CGFloat) scale;
+
+//
+//  Draw a a polygon into a UIImage and returns the image
+//
+
+- (UIImage *)polyImage;
 
 @end
